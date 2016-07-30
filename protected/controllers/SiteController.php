@@ -2,7 +2,6 @@
 
 class SiteController extends Controller
 {
-	public $layout='column1';
 
 	/**
 	 * Declares class-based actions.
@@ -15,14 +14,18 @@ class SiteController extends Controller
 				'class'=>'CCaptchaAction',
 				'backColor'=>0xFFFFFF,
 			),
-			// page action renders "static" pages stored under 'protected/views/site/pages'
-			// They can be accessed via: index.php?r=site/page&view=FileName
+			// page action renders "static" pages stored under 'protected/views/default/pages'
+			// They can be accessed via: index.php?r=default/page&view=FileName
 			'page'=>array(
 				'class'=>'CViewAction',
 			),
 		);
 	}
 
+    public  function actionIndex()
+    {
+        return $this->render('index',array('content'=>'aaaaa'));
+    }
 	/**
 	 * This is the action to handle external exceptions.
 	 */
