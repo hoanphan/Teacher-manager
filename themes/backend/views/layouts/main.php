@@ -36,6 +36,7 @@
 	<!--[if lte IE 8]>
 	<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/html5shiv.min.js"></script>
 	<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/respond.min.js"></script>
+
 	<![endif]-->
 </head>
 

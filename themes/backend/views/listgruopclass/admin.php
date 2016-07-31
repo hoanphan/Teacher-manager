@@ -1,3 +1,35 @@
+<script>
+    $(document).ready(function () {
+        $('#menu').find('li').each(function () {
+            if($(this).hasClass('active open'))
+            {
+                $(this).removeClass('active open');
+                $(this).find('ul').each(function () {
+                    $(this).find('li').each(function () {
+                        if($(this).hasClass('active open'))
+                        {
+                            $(this).removeClass('active open');
+                        }
+                    })
+
+                });
+            }
+            if($(this).val()==1)
+            {
+                $(this).addClass('active open');
+            }
+        });
+
+        $('.submenu').find('li').each(function () {
+                if($(this).hasClass('gruop'))
+                {
+                    $(this).addClass('active open');
+                    $(this).find('ul').find('li').addClass('active open');
+                }
+            }
+        );
+    })
+</script>
 <div class="row">
     <div class="col-xs-12">
         <!-- PAGE CONTENT BEGINS -->

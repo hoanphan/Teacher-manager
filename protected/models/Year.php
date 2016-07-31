@@ -26,7 +26,7 @@ class Year extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_year, name', 'required'),
+			array('name', 'required'),
 			array('id_year, status', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>200),
 			// The following rule is used by search().
@@ -57,9 +57,9 @@ class Year extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_year' => 'Id Year',
-			'name' => 'Name',
-			'status' => 'Status',
+			'id_year' => '#',
+			'name' => 'Tên năm',
+			'status' => 'Trạng thái',
 		);
 	}
 
@@ -111,4 +111,15 @@ class Year extends CActiveRecord
         return $yea;
 
     }
+    public function getSatusText($status)
+    {
+        $status_array=array(0=>'Inactive',1=>'Active');
+        if(isset($status_array[$status]))
+        {
+            return $status_array[$status];
+        }
+        else
+            return 'Unknown Status';
+    }
+
 }

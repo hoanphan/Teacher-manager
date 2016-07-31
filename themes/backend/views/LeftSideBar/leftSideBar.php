@@ -27,8 +27,8 @@
         <span class="btn btn-danger"></span>
     </div>
 </div>
-<ul style="top: 0px;" class="nav nav-list">
-    <li class="active open">
+<ul style="top: 0px;" class="nav nav-list" id="menu">
+    <li class="">
         <a href="<?php echo Yii::app()->createUrl('admin/default/index')?>">
             <i class="menu-icon fa fa-tachometer"></i>
             <span class="menu-text"> Bảng điều khiển </span>
@@ -37,12 +37,11 @@
         <b class="arrow"></b>
     </li>
 
-    <li class="">
+    <li class="" value="1">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-desktop"></i>
             <span class="menu-text">
-								Thông tin
-							</span>
+								Thông tin</span>
 
             <b class="arrow fa fa-angle-down"></b>
         </a>
@@ -53,7 +52,6 @@
             <li class="">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
-
                     Giáo viên
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
@@ -81,11 +79,9 @@
 
                 </ul>
             </li>
-
             <li class="">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
-
                     Phòng ban
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
@@ -114,10 +110,9 @@
                 </ul>
             </li>
 
-            <li class="">
+            <li class="gruop">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
-
                     Khối
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
@@ -134,18 +129,9 @@
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
-                        <a href="<?php echo Yii::app()->createUrl('admin/listgruopclass/create')?>">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Thêm khối
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
                 </ul>
             </li>
-            <li class="">
+            <li class="class" value="class">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
                    Lớp
@@ -164,21 +150,11 @@
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
-                        <a href="two-menu-1.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Thêm lớp
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
                 </ul>
             </li>
-            <li class="">
+            <li class="science_topic">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
-
                         Đề tài
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
@@ -189,7 +165,7 @@
                     <li class="">
                         <a href="top-menu.html">
                             <i class="menu-icon fa fa-caret-right"></i>
-                            Danh đề tài
+                            Danh sách đề tài
                         </a>
 
                         <b class="arrow"></b>
@@ -206,7 +182,7 @@
 
                 </ul>
             </li>
-            <li class="">
+            <li class="classification">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
                         Xếp loại đề tài
@@ -217,18 +193,9 @@
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="top-menu.html">
+                        <a href="<?php echo Yii::app()->createUrl('admin/classification/admin')?>">
                             <i class="menu-icon fa fa-caret-right"></i>
                            Danh sách xếp loại
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="two-menu-1.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                           Thêm xếp loại
                         </a>
 
                         <b class="arrow"></b>
@@ -269,7 +236,7 @@
         </ul>
     </li>
 
-    <li class="">
+    <li class="a">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-list"></i>
             <span class="menu-text"> Phân công giảng dạy </span>
@@ -321,7 +288,7 @@
 
         <b class="arrow"></b>
     </li>
-    <li class="">
+    <li class="" value="3">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-calendar"></i>
             <span class="menu-text">năm học </span>
@@ -332,7 +299,7 @@
         <b class="arrow"></b>
 
         <ul class="submenu">
-            <li class="">
+            <li class="year">
                 <a href="<?php echo Yii::app()->createUrl('admin/year/admin')?>">
                     <i class="menu-icon fa fa-caret-right"></i>
                     Danh sách năm học

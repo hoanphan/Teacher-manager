@@ -1,3 +1,35 @@
+<script>
+    $(document).ready(function () {
+        $('#menu').find('li').each(function () {
+            if($(this).hasClass('active open'))
+            {
+                $(this).removeClass('active open');
+                $(this).find('ul').each(function () {
+                    $(this).find('li').each(function () {
+                        if($(this).hasClass('active open'))
+                        {
+                            $(this).removeClass('active open');
+                        }
+                    })
+
+                });
+            }
+            if($(this).val()==1)
+            {
+                $(this).addClass('active open');
+            }
+        });
+
+        $('.submenu').find('li').each(function () {
+                if($(this).hasClass('class'))
+                {
+                    $(this).addClass('active open');
+                    $(this).find('ul').find('li').addClass('active open');
+                }
+            }
+        );
+    })
+</script>
 <div class="row">
     <div class="col-xs-12">
         <!-- PAGE CONTENT BEGINS -->
@@ -12,7 +44,7 @@
                         array(
                             'name'=>'id',
                             'header'=>'#',
-                            'htmlOptions'=>array('style'=>'width: 5%; text-align: center;'),
+                            'htmlOptions'=>array('style'=>'width: 10%; text-align: center;'),
                             'headerHtmlOptions'=>array('style'=>' text-align: center;'),
                             ),
                         array(
@@ -44,13 +76,8 @@
                         array(
                             'class' => 'CButtonColumn',
                             'htmlOptions'=>array('style'=>'width: 15%; text-align: center;'),
-                            'template'=>'{view}{create}{update}{delete}',
+                            'template'=>'{create}{update}{delete}',
                             'buttons'=>array(
-                                'view'=>array(
-                                    'options'=>array('class'=>'ui-pg-div','style'=>'margin:1px'),
-                                    'label'=>'<span class="ui-icon ace-icon fa fa-search orange"></span>',
-                                    'imageUrl'=>false
-                                ),
                                 'create'=>array(
                                     'options'=>array('class'=>'ui-pg-div','style'=>'margin:1px'),
                                     'label'=>'<span class="ui-icon ace-icon fa fa-plus-circle purple"></span>',

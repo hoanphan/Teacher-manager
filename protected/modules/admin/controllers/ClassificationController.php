@@ -1,6 +1,6 @@
 <?php
 
-class YearController extends AdminController
+class ClassificationController extends AdminController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -25,10 +25,6 @@ class YearController extends AdminController
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array(),
-				'users'=>array('*'),
-			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','index','view','admin','delete'),
 				'users'=>array('@'),
@@ -56,14 +52,14 @@ class YearController extends AdminController
 	 */
 	public function actionCreate()
 	{
-		$model=new Year;
+		$model=new Classification;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Year']))
+		if(isset($_POST['Classification']))
 		{
-			$model->attributes=$_POST['Year'];
+			$model->attributes=$_POST['Classification'];
 			if($model->save())
 				$this->redirect(array('admin'));
 		}
@@ -80,14 +76,15 @@ class YearController extends AdminController
 	 */
 	public function actionUpdate($id)
 	{
+
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Year']))
+		if(isset($_POST['Classification']))
 		{
-			$model->attributes=$_POST['Year'];
+			$model->attributes=$_POST['Classification'];
 			if($model->save())
 				$this->redirect(array('admin'));
 		}
@@ -116,7 +113,7 @@ class YearController extends AdminController
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Year');
+		$dataProvider=new CActiveDataProvider('Classification');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -127,10 +124,10 @@ class YearController extends AdminController
 	 */
 	public function actionAdmin()
 	{
-		$model=new Year('search');
+		$model=new Classification('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Year']))
-			$model->attributes=$_GET['Year'];
+		if(isset($_GET['Classification']))
+			$model->attributes=$_GET['Classification'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -141,12 +138,12 @@ class YearController extends AdminController
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Year the loaded model
+	 * @return Classification the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Year::model()->findByPk($id);
+		$model=Classification::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -154,11 +151,11 @@ class YearController extends AdminController
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Year $model the model to be validated
+	 * @param Classification $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='year-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='classification-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

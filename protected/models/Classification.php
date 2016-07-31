@@ -1,22 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "list_science_topic".
+ * This is the model class for table "classification".
  *
- * The followings are the available columns in table 'list_science_topic':
- * @property integer $id
- * @property string $name
- * @property integer $id_teacher
+ * The followings are the available columns in table 'classification':
  * @property integer $id_classification
+ * @property string $name
  */
-class ListScienceTopic extends CActiveRecord
+class Classification extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'list_science_topic';
+		return 'classification';
 	}
 
 	/**
@@ -27,12 +25,11 @@ class ListScienceTopic extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, id_teacher, id_classification', 'required'),
-			array('id_teacher, id_classification', 'numerical', 'integerOnly'=>true),
+			array('name', 'required'),
 			array('name', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, id_teacher, id_classification', 'safe', 'on'=>'search'),
+			array('id_classification, name', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -44,15 +41,10 @@ class ListScienceTopic extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		    'classification'=>array(
-		        self::BELONGS_TO,
-                'Classification',
+		    ' list_science_topic'=>array(
+		        self::HAS_MANY,
+                'ListScienceTopic',
                 'id_classification'
-            ),
-            'list_teacher'=>array(
-                self::BELONGS_TO,
-                'ListTeacher',
-                'id'
             )
 		);
 	}
@@ -63,10 +55,8 @@ class ListScienceTopic extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'id_teacher' => 'Id Teacher',
-			'id_classification' => 'Classification',
+			'id_classification' => 'Số thứ tự ',
+			'name' => 'Tên xếp loại',
 		);
 	}
 
@@ -88,10 +78,8 @@ class ListScienceTopic extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('id_teacher',$this->id_teacher);
 		$criteria->compare('id_classification',$this->id_classification);
+		$criteria->compare('name',$this->name,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -102,7 +90,7 @@ class ListScienceTopic extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ListScienceTopic the static model class
+	 * @return Classification the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
