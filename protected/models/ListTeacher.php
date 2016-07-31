@@ -5,12 +5,15 @@
  *
  * The followings are the available columns in table 'list_teacher':
  * @property integer $id
+ * @property  integer $id_class
  * @property string $name
  * @property integer $nation
  * @property string $image
  * @property string $birthday
  * @property integer $pefessional_gruop
  * @property integer $subject
+ * @property  string $username
+ * @property  string $password
  */
 class ListTeacher extends CActiveRecord
 {
@@ -30,8 +33,8 @@ class ListTeacher extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, nation, image, birthday, pefessional_gruop, subject', 'required'),
-			array('nation, pefessional_gruop, subject', 'numerical', 'integerOnly'=>true),
+			array('id_class, name, nation, image, birthday, pefessional_gruop, subject,username,password', 'required'),
+			array('id_class,nation, pefessional_gruop, subject', 'numerical', 'integerOnly'=>true),
 			array('name, image', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -57,12 +60,15 @@ class ListTeacher extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'nation' => 'Nation',
-			'image' => 'Image',
-			'birthday' => 'Birthday',
-			'pefessional_gruop' => 'Pefessional Gruop',
-			'subject' => 'Subject',
+            'id_class'=>'Lớp chủ nghiệm',
+			'name' => 'Họ và tên',
+			'nation' => 'Dân tộc',
+			'image' => 'Ảnh đại diện',
+			'birthday' => 'Ngày sinh',
+			'pefessional_gruop' => 'Phòng ban',
+			'subject' => 'Môn dạy',
+            'username'=>'Tài khoản đăng nhập',
+            'password'=>'Mật khẩu'
 		);
 	}
 
@@ -85,13 +91,15 @@ class ListTeacher extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+        $criteria->compare('id_class',$this->id_class);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('nation',$this->nation);
 		$criteria->compare('image',$this->image,true);
 		$criteria->compare('birthday',$this->birthday,true);
 		$criteria->compare('pefessional_gruop',$this->pefessional_gruop);
 		$criteria->compare('subject',$this->subject);
-
+        $criteria->compare('username',$this->username);
+        $criteria->compare('password',$this->password);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -107,4 +115,23 @@ class ListTeacher extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+    public function getTeacherName()
+    {
+        $user=$this->findAll();
+        $name=array();
+        foreach ($user as $use)
+        {
+            $name[$use->id]=$use->name;
+        }
+        return $name;
+    }
+
+    /**
+     * @param $string
+     * @return string
+     */
+    public function hash($string)
+    {
+        return md5($string);
+    }
 }

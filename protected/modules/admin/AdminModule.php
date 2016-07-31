@@ -6,7 +6,12 @@ class AdminModule extends CWebModule
 	{
 		// this method is called when the module is being created
 		// you may place code here to customize the module or the application
-
+        $this->setComponents(array(
+            'class'=>array(
+                'class'=>'CWebUser',
+                'loginUrl'=>Yii::app()->createUrl('admin/default/login')
+            ))
+        );
 		// import the module-level models and components
 		$this->setImport(array(
 			'admin.models.*',
@@ -21,7 +26,13 @@ class AdminModule extends CWebModule
 		if(parent::beforeControllerAction($controller, $action))
 		{
 			// this method is called before any module controller action is performed
-			// you may place customized code here
+			$router=Yii::app()->controller->module->id.'/'.$controller->id.'/'.$action->id;
+            $loginpage=array('admin/default/admin');
+            if(Yii::app()->user->isGuest&&!in_array($router,$loginpage))
+            {
+               Yii::app()->user->returnUrl=Yii::app()->request->getUrl();
+                Yii::app()->getModule("admin")->user->loginRequired();
+            }
 			return true;
 		}
 		else

@@ -1,7 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: HOANDHTB
- * Date: 7/30/2016
- * Time: 4:26 PM
- */
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+    </script>
+
+    <ul class="breadcrumb">
+    </ul><!-- /.breadcrumb -->
+
+    <div class="nav-search" id="nav-search">
+        <form class="form-search">
+
+        </form>
+    </div><!-- /.nav-search -->
+</div>

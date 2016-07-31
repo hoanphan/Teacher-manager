@@ -28,10 +28,10 @@
     </div>
 </div>
 <ul style="top: 0px;" class="nav nav-list">
-    <li class="">
-        <a href="index.html">
+    <li class="active open">
+        <a href="<?php echo Yii::app()->createUrl('admin/default/index')?>">
             <i class="menu-icon fa fa-tachometer"></i>
-            <span class="menu-text"> Dashboard </span>
+            <span class="menu-text"> Bảng điều khiển </span>
         </a>
 
         <b class="arrow"></b>
@@ -41,7 +41,7 @@
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-desktop"></i>
             <span class="menu-text">
-								UI &amp; Elements
+								Thông tin
 							</span>
 
             <b class="arrow fa fa-angle-down"></b>
@@ -54,7 +54,7 @@
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
 
-                    Layouts
+                    Giáo viên
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
 
@@ -64,7 +64,7 @@
                     <li class="">
                         <a href="top-menu.html">
                             <i class="menu-icon fa fa-caret-right"></i>
-                            Top Menu
+                           Danh sách giáo viên
                         </a>
 
                         <b class="arrow"></b>
@@ -73,118 +73,20 @@
                     <li class="">
                         <a href="two-menu-1.html">
                             <i class="menu-icon fa fa-caret-right"></i>
-                            Two Menus 1
+                           Thêm giáo viên
                         </a>
 
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
-                        <a href="two-menu-2.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Two Menus 2
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="mobile-menu-1.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Default Mobile Menu
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="mobile-menu-2.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Mobile Menu 2
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="mobile-menu-3.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Mobile Menu 3
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
                 </ul>
-            </li>
-
-            <li class="">
-                <a href="typography.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Typography
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="elements.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Elements
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="buttons.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Buttons &amp; Icons
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="content-slider.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Content Sliders
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="treeview.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Treeview
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="jquery-ui.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    jQuery UI
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="nestable-list.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Nestable Lists
-                </a>
-
-                <b class="arrow"></b>
             </li>
 
             <li class="">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
 
-                    Three Level Menu
+                    Phòng ban
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
 
@@ -192,53 +94,185 @@
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="#">
-                            <i class="menu-icon fa fa-leaf green"></i>
-                            Item #1
+                        <a href="top-menu.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Danh sách phòng ban
                         </a>
 
                         <b class="arrow"></b>
                     </li>
 
                     <li class="">
-                        <a href="#" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-pencil orange"></i>
-
-                            4th level
-                            <b class="arrow fa fa-angle-down"></b>
+                        <a href="two-menu-1.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Thêm phòng ban
                         </a>
 
                         <b class="arrow"></b>
-
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="#">
-                                    <i class="menu-icon fa fa-plus purple"></i>
-                                    Add Product
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-
-                            <li class="">
-                                <a href="#">
-                                    <i class="menu-icon fa fa-eye pink"></i>
-                                    View Products
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-                        </ul>
                     </li>
+
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-caret-right"></i>
+
+                    Khối
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="<?php echo Yii::app()->createUrl('admin/listgruopclass/admin')?>">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Danh sách khối
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="<?php echo Yii::app()->createUrl('admin/listgruopclass/create')?>">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Thêm khối
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                   Lớp
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="<?php echo Yii::app()->createUrl('admin/class/admin')?>">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Danh sách lớp
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="two-menu-1.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Thêm lớp
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-caret-right"></i>
+
+                        Đề tài
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="top-menu.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Danh đề tài
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="two-menu-1.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Thêm đề tài
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                        Xếp loại đề tài
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="top-menu.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                           Danh sách xếp loại
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="two-menu-1.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                           Thêm xếp loại
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                  Môn học
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+
+                <b class="arrow"></b>
+
+                <ul class="submenu">
+                    <li class="">
+                        <a href="top-menu.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Danh sách môn học
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="two-menu-1.html">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Thêm Môn học
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
                 </ul>
             </li>
         </ul>
     </li>
 
-    <li class="active open">
+    <li class="">
         <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-list"></i>
-            <span class="menu-text"> Tables </span>
+            <span class="menu-text"> Phân công giảng dạy </span>
 
             <b class="arrow fa fa-angle-down"></b>
         </a>
@@ -246,10 +280,10 @@
         <b class="arrow"></b>
 
         <ul class="submenu">
-            <li class="active">
+            <li class="">
                 <a href="tables.html">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    Simple &amp; Dynamic
+                       Danh sách phân công giảng dạy
                 </a>
 
                 <b class="arrow"></b>
@@ -258,7 +292,7 @@
             <li class="">
                 <a href="jqgrid.html">
                     <i class="menu-icon fa fa-caret-right"></i>
-                    jqGrid plugin
+                    Thêm phân công giảng dạy
                 </a>
 
                 <b class="arrow"></b>
@@ -267,61 +301,16 @@
     </li>
 
     <li class="">
-        <a href="#" class="dropdown-toggle">
+        <a href="#" >
             <i class="menu-icon fa fa-pencil-square-o"></i>
-            <span class="menu-text"> Forms </span>
+            <span class="menu-text"> Phân quyền </span>
 
-            <b class="arrow fa fa-angle-down"></b>
+
         </a>
 
-        <b class="arrow"></b>
 
-        <ul class="submenu">
-            <li class="">
-                <a href="form-elements.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Form Elements
-                </a>
 
-                <b class="arrow"></b>
-            </li>
 
-            <li class="">
-                <a href="form-elements-2.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Form Elements 2
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="form-wizard.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Wizard &amp; Validation
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="wysiwyg.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Wysiwyg &amp; Markdown
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="dropzone.html">
-                    <i class="menu-icon fa fa-caret-right"></i>
-                    Dropzone File Upload
-                </a>
-
-                <b class="arrow"></b>
-            </li>
-        </ul>
     </li>
 
     <li class="">
@@ -332,23 +321,36 @@
 
         <b class="arrow"></b>
     </li>
-
     <li class="">
-        <a href="calendar.html">
+        <a href="#" class="dropdown-toggle">
             <i class="menu-icon fa fa-calendar"></i>
+            <span class="menu-text">năm học </span>
 
-            <span class="menu-text">
-								Calendar
-
-								<span data-original-title="2 Important Events" class="badge badge-transparent tooltip-error" title="">
-									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-								</span>
-							</span>
+            <b class="arrow fa fa-angle-down"></b>
         </a>
 
         <b class="arrow"></b>
-    </li>
 
+        <ul class="submenu">
+            <li class="">
+                <a href="<?php echo Yii::app()->createUrl('admin/year/admin')?>">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    Danh sách năm học
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href="jqgrid.html">
+                    <i class="menu-icon fa fa-caret-right"></i>
+                    Thêm năm học
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+        </ul>
+    </li>
     <li class="">
         <a href="gallery.html">
             <i class="menu-icon fa fa-picture-o"></i>
