@@ -1,5 +1,5 @@
 
-<h1>Create Classification</h1>
+<h1>Thêm mới xếp loại</h1>
 
 <?php
 /* @var $this YearController */

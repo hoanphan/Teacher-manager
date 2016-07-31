@@ -1,28 +1,24 @@
 <script>
     $(document).ready(function () {
         $('#menu').find('li').each(function () {
-            if($(this).hasClass('active open'))
-            {
+            if ($(this).hasClass('active open')) {
                 $(this).removeClass('active open');
                 $(this).find('ul').each(function () {
                     $(this).find('li').each(function () {
-                        if($(this).hasClass('active open'))
-                        {
+                        if ($(this).hasClass('active open')) {
                             $(this).removeClass('active open');
                         }
                     })
 
                 });
             }
-            if($(this).val()==1)
-            {
+            if ($(this).val() == 1) {
                 $(this).addClass('active open');
             }
         });
 
         $('.submenu').find('li').each(function () {
-                if($(this).hasClass('gruop'))
-                {
+                if ($(this).hasClass('professionalGroups')) {
                     $(this).addClass('active open');
                     $(this).find('ul').find('li').addClass('active open');
                 }
@@ -30,24 +26,33 @@
         );
     })
 </script>
+<h1>Danh sách Phòng ban - Khoa</h1>
+
 <div class="row">
     <div class="col-xs-12">
         <!-- PAGE CONTENT BEGINS -->
         <div class="row">
             <div class="col-xs-12">
+                <div class="search-form" style="display:none">
+                    <?php $this->renderPartial('_search', array(
+                        'model' => $model,
+                    )); ?>
+                </div><!-- search-form -->
+
                 <?php $this->widget('zii.widgets.grid.CGridView', array(
-                    'id' => 'list-gruop-class-grid',
+                    'id' => 'professional-groups-grid',
                     'dataProvider' => $model->search(),
                     'itemsCssClass' => 'table table-striped table-bordered table-hover',
                     'columns' => array(
                         array(
-                            'name'=>'id_gruop',
-                            'htmlOptions'=>array('style'=>' text-align: center;'),
+                            'name'=>'id',
+                            'header'=>'#',
+                            'htmlOptions'=>array('style'=>'width: 10%; text-align: center;'),
                             'headerHtmlOptions'=>array('style'=>' text-align: center;'),
                         ),
                         array(
                             'name'=>'name',
-                            'htmlOptions'=>array('style'=>' text-align: center;'),
+                            'htmlOptions'=>array('style'=>'width: 15%; text-align: center;'),
                             'headerHtmlOptions'=>array('style'=>' text-align: center;'),
                         ),
                         array(
@@ -55,11 +60,10 @@
                             'htmlOptions'=>array('style'=>'width: 15%; text-align: center;'),
                             'template'=>'{create}{update}{delete}',
                             'buttons'=>array(
-
                                 'create'=>array(
                                     'options'=>array('class'=>'ui-pg-div','style'=>'margin:1px'),
                                     'label'=>'<span class="ui-icon ace-icon fa fa-plus-circle purple"></span>',
-                                    'url'=>'Yii::app()->createUrl("admin/listgruopclass/create")',
+                                    'url'=>'Yii::app()->createUrl("admin/professionalgroups/create")',
                                     'imageUrl'=>false
                                 ),
                                 'update'=>array(

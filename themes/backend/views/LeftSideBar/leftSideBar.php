@@ -79,7 +79,7 @@
 
                 </ul>
             </li>
-            <li class="">
+            <li class="professionalGroups">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
                     Phòng ban
@@ -90,7 +90,7 @@
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="top-menu.html">
+                        <a href="<?php echo Yii::app()->createUrl('admin/professionalgroups/admin')?>">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Danh sách phòng ban
                         </a>
@@ -98,14 +98,6 @@
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
-                        <a href="two-menu-1.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Thêm phòng ban
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
 
                 </ul>
             </li>

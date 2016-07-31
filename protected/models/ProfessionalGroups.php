@@ -41,6 +41,7 @@ class ProfessionalGroups extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+
 		);
 	}
 
@@ -50,8 +51,8 @@ class ProfessionalGroups extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
+			'id' => 'Số thứ tự',
+			'name' => 'Tên phòng ban',
 		);
 	}
 
