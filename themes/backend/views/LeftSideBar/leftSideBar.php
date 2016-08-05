@@ -69,7 +69,7 @@
                     </li>
 
                     <li class="">
-                        <a href="two-menu-1.html">
+                        <a href="<?php echo Yii::app()->createUrl("admin/listteacher/create")?>">
                             <i class="menu-icon fa fa-caret-right"></i>
                            Thêm giáo viên
                         </a>

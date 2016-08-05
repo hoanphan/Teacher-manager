@@ -36,8 +36,6 @@
                             <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-info'));?>
                         </div>
                     </div>
-
-
                     <?php $this->endWidget(); ?>
                 </form>
             </div>

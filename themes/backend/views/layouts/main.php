@@ -226,6 +226,24 @@
 <script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/dataTables.tableTools.min.js"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/dataTables.colVis.min.js"></script>
 
+
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/excanvas.min.js"></script>
+<![endif]-->
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/jquery-ui.custom.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/jquery.ui.touch-punch.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/jquery.gritter.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/bootbox.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/jquery.easypiechart.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/bootstrap-datepicker.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/jquery.hotkeys.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/bootstrap-wysiwyg.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/select2.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/fuelux.spinner.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/bootstrap-editable.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/ace-editable.min.js"></script>
+<script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/jquery.maskedinput.min.js"></script>
+
+
 <!-- ace scripts -->
 <script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/ace-elements.min.js"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl?>/assets/js/ace.min.js"></script>
