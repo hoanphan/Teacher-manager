@@ -18,7 +18,7 @@
         });
 
         $('.submenu').find('li').each(function () {
-                if ($(this).hasClass('professionalGroups')) {
+                if ($(this).hasClass('science_topic')) {
                     $(this).addClass('active open');
                     $(this).find('ul').find('li').addClass('active open');
                 }
@@ -27,7 +27,7 @@
     })
 </script>
 <div class="page-header">
-    <h1>Danh sách Phòng ban - Khoa</h1>
+    <h1>Danh sách đề tài</h1>
 </div>
 
 
@@ -36,38 +36,47 @@
         <!-- PAGE CONTENT BEGINS -->
         <div class="row">
             <div class="col-xs-12">
-                <div class="search-form" style="display:none">
-                    <?php $this->renderPartial('_search', array(
-                        'model' => $model,
-                    )); ?>
-                </div><!-- search-form -->
 
                 <?php $this->widget('zii.widgets.grid.CGridView', array(
-                    'id' => 'professional-groups-grid',
-                    'dataProvider' => $model->search(),
-
+                    'id' => 'list-science-topic-grid',
+                    'dataProvider' => $model,
                     'itemsCssClass' => 'table table-striped table-bordered table-hover',
                     'columns' => array(
                         array(
-                            'name'=>'id',
-                            'header'=>'#',
-                            'htmlOptions'=>array('style'=>'width: 10%; text-align: center;'),
-                            'headerHtmlOptions'=>array('style'=>' text-align: center;'),
+                            'name' => 'id',
+                            'header' => '#',
+                            'htmlOptions' => array('style' => 'width: 10%; text-align: center;'),
+                            'headerHtmlOptions' => array('style' => ' text-align: center;'),
                         ),
                         array(
-                            'name'=>'name',
-                            'htmlOptions'=>array('style'=>'width: 15%; text-align: center;'),
+                            'name' => 'name',
+                            'htmlOptions' => array('style' => 'width: 15%; text-align: center;'),
+                            'headerHtmlOptions' => array('style' => ' text-align: center;'),
+                        ),
+                        array(
+                            'name'=>'id_teacher',
+                            'type'=>'raw',
+                            'htmlOptions'=>array('style'=>' text-align: center;'),
                             'headerHtmlOptions'=>array('style'=>' text-align: center;'),
+                            'value'=>'$data->getNameTeacher()'
+                        ),
+
+                        array(
+                            'name' => 'id_classification',
+                            'htmlOptions' => array('style' => ' text-align: center;'),
+                            'headerHtmlOptions' => array('style' => ' text-align: center;'),
+                            'value'=>'$data->getNameClassifiaction()'
                         ),
                         array(
                             'class' => 'CButtonColumn',
                             'htmlOptions'=>array('style'=>'width: 15%; text-align: center;'),
                             'template'=>'{create}{update}{delete}',
                             'buttons'=>array(
+
                                 'create'=>array(
                                     'options'=>array('class'=>'ui-pg-div','style'=>'margin:1px'),
                                     'label'=>'<span class="ui-icon ace-icon fa fa-plus-circle purple"></span>',
-                                    'url'=>'Yii::app()->createUrl("admin/professionalgroups/create")',
+                                    'url'=>'Yii::app()->createUrl("admin/listciencetopic/create")',
                                     'imageUrl'=>false
                                 ),
                                 'update'=>array(
@@ -88,3 +97,4 @@
         </div>
     </div>
 </div>
+

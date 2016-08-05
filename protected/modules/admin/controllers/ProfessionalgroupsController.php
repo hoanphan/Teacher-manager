@@ -61,7 +61,7 @@ class ProfessionalgroupsController extends AdminController
 		{
 			$model->attributes=$_POST['ProfessionalGroups'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -85,7 +85,7 @@ class ProfessionalgroupsController extends AdminController
 		{
 			$model->attributes=$_POST['ProfessionalGroups'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(

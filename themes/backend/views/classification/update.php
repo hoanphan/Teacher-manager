@@ -15,8 +15,10 @@ $this->menu = array(
     array('label' => 'Manage Classification', 'url' => array('admin')),
 );
 ?>
+<div class="page-header">
+    <h1>Cập nhật xếp loại <?php echo $model->id_classification; ?></h1>
+</div>
 
-<h1>Cập nhật xếp loại <?php echo $model->id_classification; ?></h1>
 <div class="page-content">
 
     <div class="row">

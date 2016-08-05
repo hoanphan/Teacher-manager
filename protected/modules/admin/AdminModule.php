@@ -26,13 +26,13 @@ class AdminModule extends CWebModule
 		if(parent::beforeControllerAction($controller, $action))
 		{
 			// this method is called before any module controller action is performed
-			$router=Yii::app()->controller->module->id.'/'.$controller->id.'/'.$action->id;
-            $loginpage=array('admin/default/admin');
+			/*$router=Yii::app()->controller->module->id.'/'.$controller->id.'/'.$action->id;
+            $loginpage=array('admin/default/login');
             if(Yii::app()->user->isGuest&&!in_array($router,$loginpage))
             {
                Yii::app()->user->returnUrl=Yii::app()->request->getUrl();
-                Yii::app()->getModule("admin")->user->loginRequired();
-            }
+                Yii::app()->getModule("listTeacher")->user->loginRequired();
+            }*/
 			return true;
 		}
 		else

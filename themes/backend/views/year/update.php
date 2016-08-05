@@ -15,7 +15,9 @@ $this->menu=array(
 	array('label'=>'Manage Year', 'url'=>array('admin')),
 );
 ?>
+	<div class="page-header">
+		<h1>Cập nhật năm học <?php echo $model->id_year; ?></h1>
+	</div>
 
-<h1>Update Year <?php echo $model->id_year; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

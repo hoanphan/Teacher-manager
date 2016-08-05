@@ -63,10 +63,10 @@ class ListScienceTopic extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'id_teacher' => 'Id Teacher',
-			'id_classification' => 'Classification',
+			'id' => 'Số thứ tự',
+			'name' => 'Tên đề tài',
+			'id_teacher' => 'Giáo viên thực hiện',
+			'id_classification' => 'Xếp loại',
 		);
 	}
 
@@ -86,16 +86,16 @@ class ListScienceTopic extends CActiveRecord
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('id_teacher',$this->id_teacher);
-		$criteria->compare('id_classification',$this->id_classification);
-
-		return new CActiveDataProvider($this, array(
+		    $criteria=new CDbCriteria;
+            $criteria->compare('id', $this->id);
+            $criteria->compare('name', $this->name, true);
+            $criteria->compare('id_teacher', $this->id_teacher);
+            $criteria->compare('id_classification', $this->id_classification);
+		$ca= new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+
+        return $ca;
 	}
 
 	/**
@@ -108,4 +108,32 @@ class ListScienceTopic extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    /**
+     * @return string
+     */
+    public function getNameTeacher()
+    {
+        $teacher=ListTeacher::model()->findByPk($this->id_teacher);
+        if(isset($teacher))
+        {
+            return $teacher->name;
+        }
+        else
+            return 'Unknown';
+    }
+
+    /**
+     * @return string
+     */
+    public function getNameClassifiaction()
+    {
+        $classification=Classification::model()->findByPk($this->id_classification);
+        if(isset($classification))
+        {
+            return $classification->name;
+        }
+        else
+            return 'Unknown';
+    }
 }

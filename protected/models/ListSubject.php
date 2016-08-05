@@ -50,8 +50,8 @@ class ListSubject extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'name' => 'Name',
+			'id' => 'Số thứ tự',
+			'name' => 'Tên môn học',
 		);
 	}
 

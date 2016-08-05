@@ -31,6 +31,9 @@
         );
     })
 </script>
+<div class="page-header">
+    <h1>Danh sách khóa học</h1>
+</div>
 <h1>Manage Years</h1>
 <div class="row">
     <div class="col-xs-12">

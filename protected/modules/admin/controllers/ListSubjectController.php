@@ -1,6 +1,6 @@
 <?php
 
-class ListgruopclassController extends AdminController
+class ListSubjectController extends AdminController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -14,7 +14,6 @@ class ListgruopclassController extends AdminController
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-
 		);
 	}
 
@@ -26,8 +25,9 @@ class ListgruopclassController extends AdminController
 	public function accessRules()
 	{
 		return array(
+
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','admin','delete'),
+				'actions'=>array('create','update','index','view','admin','delete'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -53,16 +53,16 @@ class ListgruopclassController extends AdminController
 	 */
 	public function actionCreate()
 	{
-		$model=new ListGruopClass;
+		$model=new ListSubject;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['ListGruopClass']))
+		if(isset($_POST['ListSubject']))
 		{
-			$model->attributes=$_POST['ListGruopClass'];
+			$model->attributes=$_POST['ListSubject'];
 			if($model->save())
-				$this->redirect(array('admin'));
+				$this->redirect(array('admin','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -82,11 +82,11 @@ class ListgruopclassController extends AdminController
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['ListGruopClass']))
+		if(isset($_POST['ListSubject']))
 		{
-			$model->attributes=$_POST['ListGruopClass'];
+			$model->attributes=$_POST['ListSubject'];
 			if($model->save())
-				$this->redirect(array('admin'));
+				$this->redirect(array('admin','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -113,7 +113,7 @@ class ListgruopclassController extends AdminController
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ListGruopClass');
+		$dataProvider=new CActiveDataProvider('ListSubject');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -124,10 +124,10 @@ class ListgruopclassController extends AdminController
 	 */
 	public function actionAdmin()
 	{
-		$model=new ListGruopClass('search');
+		$model=new ListSubject('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['ListGruopClass']))
-			$model->attributes=$_GET['ListGruopClass'];
+		if(isset($_GET['ListSubject']))
+			$model->attributes=$_GET['ListSubject'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -138,12 +138,12 @@ class ListgruopclassController extends AdminController
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return ListGruopClass the loaded model
+	 * @return ListSubject the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=ListGruopClass::model()->findByPk($id);
+		$model=ListSubject::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -151,11 +151,11 @@ class ListgruopclassController extends AdminController
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param ListGruopClass $model the model to be validated
+	 * @param ListSubject $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='list-gruop-class-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='list-subject-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

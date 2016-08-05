@@ -30,6 +30,9 @@
         );
     })
 </script>
+<div class="page-header">
+    <h1>Danh sách khối</h1>
+</div>
 <div class="row">
     <div class="col-xs-12">
         <!-- PAGE CONTENT BEGINS -->

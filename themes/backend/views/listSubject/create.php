@@ -31,26 +31,22 @@
 		);
 	})
 </script>
+
 <?php
-/* @var $this ListgruopclassController */
-/* @var $model ListGruopClass */
+/* @var $this ListSubjectController */
+/* @var $model ListSubject */
 
 $this->breadcrumbs=array(
-	'List Gruop Classes'=>array('index'),
-	$model->name=>array('view','id'=>$model->id_gruop),
-	'Update',
+	'List Subjects'=>array('index'),
+	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List ListGruopClass', 'url'=>array('index')),
-	array('label'=>'Create ListGruopClass', 'url'=>array('create')),
-	array('label'=>'View ListGruopClass', 'url'=>array('view', 'id'=>$model->id_gruop)),
-	array('label'=>'Manage ListGruopClass', 'url'=>array('admin')),
+	array('label'=>'List ListSubject', 'url'=>array('index')),
+	array('label'=>'Manage ListSubject', 'url'=>array('admin')),
 );
 ?>
 <div class="page-header">
-	<h1>Cập nhật khối <?php echo $model->id_gruop; ?></h1>
+	<h1>Tạo môn học mới</h1>
 </div>
-
-
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

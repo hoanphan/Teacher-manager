@@ -1,5 +1,7 @@
+<div class="page-header">
+    <h1>Thêm mới xếp loại</h1>
+</div>
 
-<h1>Thêm mới xếp loại</h1>
 
 <?php
 /* @var $this YearController */

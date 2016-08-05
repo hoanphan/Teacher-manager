@@ -12,7 +12,9 @@ $this->menu=array(
 	array('label'=>'Manage Year', 'url'=>array('admin')),
 );
 ?>
+	<div class="page-header">
+		<h1>Tạo khóa học</h1>
+	</div>
 
-<h1>Create Year</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

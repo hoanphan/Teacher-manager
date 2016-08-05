@@ -1,20 +1,19 @@
 <?php
 
-class ListgruopclassController extends AdminController
+class ListScienceTopicController extends AdminController
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 
-	/**
+    /**
 	 * @return array action filters
 	 */
 	public function filters()
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
-
 		);
 	}
 
@@ -27,7 +26,7 @@ class ListgruopclassController extends AdminController
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','create','update','admin','delete'),
+				'actions'=>array('create','update','index','view','admin','delete'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -53,16 +52,16 @@ class ListgruopclassController extends AdminController
 	 */
 	public function actionCreate()
 	{
-		$model=new ListGruopClass;
+		$model=new ListScienceTopic;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['ListGruopClass']))
+		if(isset($_POST['ListScienceTopic']))
 		{
-			$model->attributes=$_POST['ListGruopClass'];
+			$model->attributes=$_POST['ListScienceTopic'];
 			if($model->save())
-				$this->redirect(array('admin'));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -82,11 +81,11 @@ class ListgruopclassController extends AdminController
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['ListGruopClass']))
+		if(isset($_POST['ListScienceTopic']))
 		{
-			$model->attributes=$_POST['ListGruopClass'];
+			$model->attributes=$_POST['ListScienceTopic'];
 			if($model->save())
-				$this->redirect(array('admin'));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -113,7 +112,8 @@ class ListgruopclassController extends AdminController
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('ListGruopClass');
+		$dataProvider=new CActiveDataProvider('ListScienceTopic',array('criteria'=>array( 'condition'=>'id=1')));
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -124,13 +124,12 @@ class ListgruopclassController extends AdminController
 	 */
 	public function actionAdmin()
 	{
-		$model=new ListGruopClass('search');
+		$model=new ListScienceTopic('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['ListGruopClass']))
-			$model->attributes=$_GET['ListGruopClass'];
-
+		if(isset($_GET['ListScienceTopic']))
+			$model->attributes=$_GET['ListScienceTopic'];
 		$this->render('admin',array(
-			'model'=>$model,
+			'model'=>$model->search(),
 		));
 	}
 
@@ -138,12 +137,12 @@ class ListgruopclassController extends AdminController
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return ListGruopClass the loaded model
+	 * @return ListScienceTopic the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=ListGruopClass::model()->findByPk($id);
+		$model=ListScienceTopic::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -151,11 +150,11 @@ class ListgruopclassController extends AdminController
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param ListGruopClass $model the model to be validated
+	 * @param ListScienceTopic $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='list-gruop-class-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='list-science-topic-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

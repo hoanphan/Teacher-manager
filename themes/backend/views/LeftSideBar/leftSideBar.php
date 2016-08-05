@@ -155,23 +155,13 @@
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="top-menu.html">
+                        <a href="<?php echo Yii::app()->createUrl('admin/listsciencetopic/admin')?>">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Danh sách đề tài
                         </a>
 
                         <b class="arrow"></b>
                     </li>
-
-                    <li class="">
-                        <a href="two-menu-1.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Thêm đề tài
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
                 </ul>
             </li>
             <li class="classification">
@@ -195,7 +185,7 @@
 
                 </ul>
             </li>
-            <li class="">
+            <li class="subject">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-caret-right"></i>
                   Môn học
@@ -206,7 +196,7 @@
 
                 <ul class="submenu">
                     <li class="">
-                        <a href="top-menu.html">
+                        <a href="<?php echo Yii::app()->createUrl('admin/listsubject/admin')?>">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Danh sách môn học
                         </a>
@@ -214,14 +204,6 @@
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
-                        <a href="two-menu-1.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Thêm Môn học
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
 
                 </ul>
             </li>

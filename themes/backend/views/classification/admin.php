@@ -27,8 +27,10 @@
         );
     })
 </script>
+<div class="page-header">
+    <h1>Danh sách xếp loại đề tài</h1>
+</div>
 
-<h1>Danh sách xếp loại đề tài</h1>
 
 <div class="row">
     <div class="col-xs-12">
